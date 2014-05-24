@@ -2,10 +2,10 @@
 ## functions do
 
 ## makeCacheMatrix creates a special "matrix", which is really a list containing a function to
-## set the value of the matrix
-## get the value of the matrix
-## set the value of the inverse matrix
-## get the value of the inverse matrix
+## set the value of the matrix passed by argument
+## get the value of the original matrix 
+## setSolve the value of the inverse matrix calculated by the solve function
+## getSolve the value of the inverse matrix saved in the object
 
 makeCacheMatrix <- function(x = matrix()) {
 	inverseMatrix <- NULL
@@ -17,8 +17,8 @@ makeCacheMatrix <- function(x = matrix()) {
     setSolve <- function(solve) inverseMatrix <<- solve
     getSolve <- function() inverseMatrix
     list(set = set, get = get,
-         setmean = setmean,
-         getmean = getmean)
+         setSolve = setSolve,
+         getSolve = getSolve)
 }
 
 
